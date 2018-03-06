@@ -1,0 +1,14 @@
+{
+  "name": "ampcc",
+  "version": "0.1.0",
+  "description": "simple server for amp stuff",
+  "main": "index.js",
+  "scripts": {
+    "start": ""
+  },
+  "author": "Caleb Cordry",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
