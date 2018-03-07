@@ -1,0 +1,194 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story" src="dist/amp-story-0.1.max.js"></script>
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+    <!-- <script async custom-element="amp-story-auto-ads" src="https://cdn.ampproject.org/v0/amp-story-auto-ads-0.1.js"></script> -->
+    <title>Story Ads Example</title>
+    <meta name="viewport"
+        content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="canonical" href="example.com">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      amp-story-page {
+        background: white;
+      }
+      h1, h2, h3 {
+        color: white;
+      }
+      h1 {
+        font-weight: bold;
+        font-size: 60px;
+      }
+      h2 {
+        font-size: 40px;
+        text-align: center;
+      }
+      .bottom {
+        align-content: flex-end;
+      }
+      .center {
+        align-content: center;
+      }
+      .tagline {
+        background-color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px 10px;
+      }
+      .title {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 15px;
+      }
+      .byline {
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .darken {
+        background-color: black;
+        opacity: 0.6;
+      }
+      .blur img{
+        filter:blur(5px)
+      }
+      amp-ad img {
+        object-fit: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+  <amp-story standalone>
+    <amp-story-auto-ads>
+      <script type="application/json">
+        {
+            "ad-attributes": {
+              "type": "custom",
+              "data-url": "/api/ad"
+            }
+        }
+      </script>
+
+      <template type="amp-mustache" id="template-1">
+        <amp-img class="fill-img" layout="fill" src="{{imgSrc}}"></amp-img>
+        <amp-pixel src="{{impressionUrl}}"></amp-pixel>
+      </template>
+
+    </amp-story-auto-ads>
+
+    <amp-story-page id="victorian">
+      <amp-story-grid-layer template="fill">
+        <amp-img src="/img/victorian.jpg" layout="fill"></amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <p>
+          <span class="tagline">Cool</span>
+        </p>
+        <h1 class="title">Welcome to San Francisco</h1>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="victorian-2">
+      <amp-story-grid-layer template="fill" class="darken blur">
+        <amp-img src="/img/victorian.jpg" layout="fill" class="darken"></amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="center">
+        <h3>
+          Ellentesque accumsan vel lectus in suscipit. Nullam et hendrerit risus. Integer ultrices luctus nisi. Mauris ut leo sed leo
+          mattis tempus. Aenean in est et sapien efficitur finibus. Sed et lorem dolor. Morbi imperdiet erat commodo, elementum
+          sem in, dignissim felis. Quisque facilisis commodo turpis, tempor rutrum augue egestas quis. Sed et nulla et quam
+          semper facilisis. Mauris finibus, tortor id rhoncus lacinia, nunc ex luctus erat, id fermentum nisi erat quis arcu.
+          Praesent eget pretium purus.
+        </h3>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="dolores" auto-advance-after="3s">
+      <amp-story-grid-layer template="fill">
+        <amp-video src="/mp4/dolores.mp4" layout="fill"></amp-video>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <h2 class="title">Dolores Park</h1>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="lombard" auto-advance-after="3s">
+      <amp-story-grid-layer template="fill">
+        <amp-video src="/mp4/lombard.mp4" layout="fill"></amp-video>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <h2 class="title">Lombard Street</h1>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="ferry-sunset" auto-advance-after="3s">
+      <amp-story-grid-layer template="fill">
+        <amp-video src="/mp4/ferry-sunset.mp4" layout="fill"></amp-video>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <h2 class="title">The Ferry Building</h1>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="fog" auto-advance-after="3s">
+      <amp-story-grid-layer template="fill">
+        <amp-video src="/mp4/fog.mp4" layout="fill"></amp-video>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <h2 class="title">Fog</h1>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="seals" auto-advance-after="3s">
+      <amp-story-grid-layer template="fill">
+        <amp-video src="/mp4/seals.mp4" layout="fill"></amp-video>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <h2 class="title">Seals</h1>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="bridge" auto-advance-after="3s">
+      <amp-story-grid-layer template="fill">
+        <amp-video src="/mp4/bridge.mp4" layout="fill"></amp-video>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <h2 class="title">Golden Gate Bridge</h1>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="guitar" auto-advance-after="3s">
+      <amp-story-grid-layer template="fill">
+        <amp-video src="/mp4/guitar.mp4" layout="fill"></amp-video>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <h2 class="title">Greatful Dead</h1>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="street" auto-advance-after="3s">
+      <amp-story-grid-layer template="fill">
+        <amp-video src="/mp4/street.mp4" layout="fill"></amp-video>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <h2 class="title">Streets</h1>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <amp-story-page id="trolley" auto-advance-after="3s">
+      <amp-story-grid-layer template="fill">
+        <amp-video src="/mp4/trolley.mp4" layout="fill"></amp-video>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <h2 class="title">Trolleys</h1>
+      </amp-story-grid-layer>
+    </amp-story-page>
+  </amp-story>
+  </body>
+</html>

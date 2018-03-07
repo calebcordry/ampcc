@@ -1,0 +1,12 @@
+{
+  "templateId": "template-1",
+  "data": {
+    "imgSrc": "https://i.imgur.com/4wUqhsQ.jpg",
+    "impressionUrl": "https://ampcc.herokuapp.com/api/track?id=1234"
+  },
+  "vars": {
+    "ctaType": "SHOP",
+    "ctaUrl": "https://ampproject.org",
+    "impressionId": "ac2d1s2E3B"
+  }
+}
