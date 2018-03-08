@@ -1,0 +1,10 @@
+{
+  "templateId": "template-2",
+  "data": {
+    "vidSrc": "mp4/interland-2.mp4"
+  },
+  "vars": {
+    "ctaType": "EXPLORE",
+    "ctaUrl": "https://ampproject.org"
+  }
+}
