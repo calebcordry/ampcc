@@ -16,10 +16,11 @@ app.get('/api/track', (req, res) => {
   res.send(req.query);
 });
 
-app.get('/api/ad/', (req, res) => {
+app.get('/api/ad', (req, res) => {
   res.sendFile('/ad-server/response1.json', { root : __dirname});
+  const header = req.query.__amp_source_origin || '*'
   res.setHeader('AMP-Access-Control-Allow-Source-Origin',
-      req.query.__amp_source_origin);
+      header);
 })
 
 app.listen(PORT, () => console.log('Server listening on port 3000!'));
