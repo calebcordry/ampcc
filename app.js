@@ -21,11 +21,19 @@ app.get('/api/track', (req, res) => {
 app.get('/api/ad', (req, res) => {
   const choice = getRandomInt(6) + 1;
   res.sendFile(`/ad-server/response${choice}.json`, { root : __dirname});
-  const header = req.query.__amp_source_origin || '*'
-  res.setHeader('AMP-Access-Control-Allow-Source-Origin',
-      header);
-  res.setHeader('Access-Control-Allow-Origin',
-      header);
+  const origin = req.query.__amp_source_origin || req.hostname;
 })
 
 app.listen(PORT, () => console.log('Server listening on port 3000!'));
+
+function enableCors(req, res, origin, opt_exposeHeaders) {
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Origin', origin);
+  res.setHeader('Access-Control-Expose-Headers',
+      ['AMP-Access-Control-Allow-Source-Origin']
+          .concat(opt_exposeHeaders || []).join(', '));
+  if (req.query.__amp_source_origin) {
+    res.setHeader('AMP-Access-Control-Allow-Source-Origin',
+        req.query.__amp_source_origin);
+  }
+}
