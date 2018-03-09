@@ -1,7 +1,7 @@
 {
   "templateId": "template-2",
   "data": {
-    "vidSrc": "mp4/interland-2.mp4"
+    "vidSrc": "https://ampcc.herokuapp.com/mp4/interland-2.mp4"
   },
   "vars": {
     "ctaType": "EXPLORE",
