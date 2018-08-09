@@ -1,0 +1,10 @@
+amp-img, amp-video {
+      height: 100vh;
+    }
+    amp-video video {
+      object-fit: cover;
+    }
+    amp-img img{
+      object-fit: cover;
+      z-index: 1;
+    }
