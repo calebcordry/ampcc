@@ -11,6 +11,10 @@ app.get('/story', (req, res) => {
   res.sendFile('/public/story.html', { root: __dirname });
 });
 
+app.get('/essence', (req, res) => {
+  res.sendFile('/public/essence.html', { root: __dirname });
+});
+
 app.get('/api/track', (req, res) => {
   res.send(req.query);
 });
