@@ -15,6 +15,10 @@ app.get('/essence', (req, res) => {
   res.sendFile('/public/essence.html', { root: __dirname });
 });
 
+app.get('/pixel', (req, res) => {
+  res.sendFile('/public/pixel.html', { root: __dirname });
+});
+
 app.get('/api/track', (req, res) => {
   res.send(req.query);
 });
